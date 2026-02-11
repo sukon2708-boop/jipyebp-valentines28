@@ -7,27 +7,20 @@
    ROOT COLOR THEME (Cute Modern)
    =============================== */
 :root{
-  /* พื้นหลังฟ้า-ชมพู */
-  --pink-1:#fef6ff;      /* ชมพูอ่อนมาก */
-  --pink-2:#e6f4ff;      /* ฟ้าอ่อนพาสเทล */
-
-  /* การ์ด */
-  --card:#ff6fae;        /* ชมพูสดนุ่มๆ */
-  --card-dark:#4da6ff;   /* ฟ้าเข้มสำหรับ hover / เงา */
-
+  --pink-1:#fff5f6;
+  --pink-2:#fde2e6;
+  --card:#c1121f;
+  --card-dark:#9b0d18;
   --white:#ffffff;
 
-  /* เงาโทนฟ้า-ชมพู */
-  --shadow: 0 22px 45px rgba(255,111,174,.25);
-  --shadow-soft: 0 12px 24px rgba(77,166,255,.22);
-
+  --shadow: 0 22px 45px rgba(193,18,31,.30);
+  --shadow-soft: 0 12px 24px rgba(193,18,31,.22);
   --radius: 28px;
 
   --container-pad: 40px;
   --shell-pad-x: 24px;
   --shell-pad-y: 36px;
 }
-
 
 /* ===============================
    GLOBAL RESET + FORCE FONT
@@ -146,7 +139,7 @@ h1{
   margin: 0 0 12px;
   font-weight:700;
   letter-spacing:.6px;
-  color:#344ead;   
+  color:#b11226;
 }
 
 h2{
@@ -160,14 +153,14 @@ h3{
   font-size: 24px;
   margin: 0 0 12px;
   font-weight:600;
-color:#344ead;   
+  color:#8d0f20;
 }
 
 h4{
   font-size: 30px;
   margin: 0 0 12px;
   font-weight:600;
-  color:#344ead;
+  color:#8d0f20;
 }
 h5{
   font-size: 24px;
@@ -200,28 +193,18 @@ p{
   border:0;
   padding: 13px 22px;
   border-radius: 999px;
-  background: linear-gradient(135deg,#ff6fae,#4da6ff);
+  background: linear-gradient(135deg,#e63946,#c1121f);
   color:#ffffff;
   font-weight:700;
   cursor:pointer;
-  box-shadow: 0 14px 28px rgba(255,111,174,.30);
-  transition: all .25s ease;
+  box-shadow: 0 14px 28px rgba(193,18,31,.35);
+  transition: all .2s ease;
   display:inline-flex;
   align-items:center;
   justify-content:center;
   text-decoration: none;
+  
 }
-
-.btn:hover{
-  transform: translateY(-3px);
-  box-shadow: 0 18px 34px rgba(77,166,255,.35);
-  background: linear-gradient(135deg,#ff85bd,#6bb8ff);
-}
-
-.btn:active{
-  transform: translateY(0);
-}
-
 .btn,
 .btn:hover,
 .btn:focus{
@@ -265,25 +248,30 @@ p{
 }
 
 
-.btn.secondary{
-  background:#ffffff;
-  color:#ff4fa3;                     /* ชมพูสด */
-  border: 2px solid #4da6ff;         /* ขอบฟ้า */
-  text-decoration: none;
-  box-shadow: 0 10px 22px rgba(77,166,255,.20);
-  transition: all .25s ease;
+.btn:hover{
+  background: linear-gradient(135deg,#c1121f,#9b0d18);
+  box-shadow: 0 18px 36px rgba(193,18,31,.45);
 }
 
+.btn:active{
+  transform: scale(.97);
+}
+
+.btn.secondary{
+  background:#ffffff;
+  color:#c1121f;
+  border: 2px solid #e63946;
+  text-decoration: none;
+  box-shadow: 0 10px 22px rgba(193,18,31,.22);
+}
+
+/* กันกรณีเป็น <a> แล้วมีเส้นใต้ */
 .btn.secondary:hover,
 .btn.secondary:focus,
 .btn.secondary:active{
   text-decoration: none;
-  color:#3da9ff;                     /* เปลี่ยนเป็นฟ้าเวลา hover */
-  border-color:#ff6fae;              /* ขอบเปลี่ยนเป็นชมพู */
-  box-shadow: 0 14px 28px rgba(255,111,174,.25);
-  transform: translateY(-2px);
+  color:#9b0d18;
 }
-
 
 /* ===============================
    CARDS
@@ -298,12 +286,10 @@ p{
 .card::before{
   background: linear-gradient(
     120deg,
-    rgba(255,160,210,.30),
-    rgba(150,210,255,.25),
-    transparent 70%
+    rgba(230,57,70,.35),
+    transparent 60%
   );
 }
-
 
 .big-card{
   width:min(720px,100%);
@@ -317,13 +303,12 @@ p{
 .pink-panel{
   width:min(520px, 100%);
   margin: 0 auto;
-  background: linear-gradient(135deg, #ff9ed0, #8ecbff);
+  background: linear-gradient(135deg, #c1121f, #e63946);
   color:#ffffff;
   border-radius: 30px;
   padding: 24px 20px;
-  box-shadow: 0 18px 38px rgba(77,166,255,.22);
+  box-shadow: var(--shadow);
 }
-
 
 
 
@@ -335,13 +320,12 @@ p{
   gap:8px;
   align-items:center;
   padding: 8px 16px;
-  background: linear-gradient(135deg,#ffe6f5,#e6f4ff);
-  border:1px solid rgba(255,111,174,.25);
+  background: rgba(255,255,255,0.92);
+  border:1px solid rgba(193,18,31,.35);
   border-radius: 999px;
-  color:#3da9ff;
+  color:#9b0d18;
   font-weight:700;
 }
-
 
 /* ===============================
    MENU GRID (6 ITEMS)
@@ -356,7 +340,7 @@ p{
 }
 
 .menu-item{
-  background: linear-gradient(135deg, #ff6fae, #4da6ff);
+  background: linear-gradient(135deg, #c1121f, #e63946);
   border-radius: 26px;
   padding: 24px 18px;
   color:#ffffff;
@@ -366,17 +350,10 @@ p{
   align-items:center;
   justify-content:center;
   min-height: 150px;
-  box-shadow: 0 18px 36px rgba(255,111,174,.25);
-  transition: all .25s ease;
+  box-shadow: var(--shadow);
+  transition: all .2s ease;
   -webkit-tap-highlight-color: transparent;
 }
-
-.menu-item:hover{
-  transform: translateY(-6px);
-  box-shadow: 0 22px 42px rgba(77,166,255,.35);
-  background: linear-gradient(135deg, #ff85bd, #6bb8ff);
-}
-
 
 .menu-item:hover{
   transform: translateY(-4px);
@@ -388,10 +365,8 @@ p{
   height:48px;
   margin-bottom: 12px;
   object-fit:contain;
-filter: drop-shadow(0 6px 12px rgba(150,210,255,.30));
-
+  filter: drop-shadow(0 10px 14px rgba(193,18,31,.35));
 }
-
 
 .menu-item .label{
   font-weight:600;
@@ -405,24 +380,21 @@ filter: drop-shadow(0 6px 12px rgba(150,210,255,.30));
    =============================== */
 .menu-item.white{
   background: #ffffff;
-  border: 3px solid #4da6ff;                /* ขอบฟ้า */
-  color: #ff4fa3;                            /* ตัวอักษรชมพู */
-  box-shadow: 0 12px 24px rgba(77,166,255,.25);
-  transition: all .25s ease;
+  border: 3px solid #e63946;
+  color: #9b0d18;
+  box-shadow: 0 12px 24px rgba(193,18,31,.25);
 }
 
 .menu-item.white .label{
-  color: #ff4fa3;
+  color: #9b0d18;
   font-weight:800;
   margin-top: 10px;
 }
 
 .menu-item.white:hover{
-  background: linear-gradient(135deg,#ffe6f5,#e6f4ff);
-  transform: translateY(-4px) scale(1.03);
-  box-shadow: 0 18px 32px rgba(255,111,174,.25);
+  background: #fff5f6;
+  transform: translateY(-4px) scale(1.02);
 }
-
 
 /* icon */
 .menu-icon{
